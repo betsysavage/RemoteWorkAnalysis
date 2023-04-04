@@ -1,0 +1,44 @@
+Respondents
+- 
+responder_id int pk fk 
+birth_year int
+gender varchar
+industry_desc varchar
+occupation_desc varchar
+manage_others varchar
+household varchar
+years_at_job varchar
+metro_or_regional varchar
+
+
+Orginizational_data
+-
+responder_id int fk - Respondents.responder_id  
+organization_size varchar
+org_encouraged_rw varchar
+org_prepared_for_rw varchar
+rw_is_common_at_org varchar
+rw_permission_is_attainable varchar
+rw_collaboration_easy varchar
+if_no_covid_employer_encourage_rw varchar
+if_no_covid_employer_support_rw varchar
+if_no_covid_i_would_have_choice_about_rw varchar
+
+
+
+Time_Management
+-
+responder_id int fk - Respondents.responder_id
+rw_percentage_2020 varchar
+preferred_rw_percentage_2020 varchar
+preferred_rw_percentage_future varchar
+productivity_remote_vs_office varchar
+inperson_hours_commuting int
+inperson_hours_working int
+inperson_hours_personal_family_time int 
+inperson_hours_domestic_responsibilities int 
+remote_hours_commuting int
+remote_hours_working int
+remote_hours_personal_family_time int
+remote_hours_domestic_responsibilities int
+commute_time_difference int
