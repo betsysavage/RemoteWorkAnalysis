@@ -11,7 +11,7 @@ years_at_job varchar
 metro_or_regional varchar
 
 
-Orginizational_data
+Orginizational_Data
 -
 responder_id int fk - Respondents.responder_id  
 organization_size varchar
@@ -23,7 +23,6 @@ rw_collaboration_easy varchar
 if_no_covid_employer_encourage_rw varchar
 if_no_covid_employer_support_rw varchar
 if_no_covid_i_would_have_choice_about_rw varchar
-
 
 
 Time_Management
