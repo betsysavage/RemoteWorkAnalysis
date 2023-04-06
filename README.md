@@ -1,17 +1,15 @@
 # RemoteWorkAnalysis
 
-## Purpose:
-
-* Project Overview:
+## Project Overview:
 
 Following the peak of the COVID-19 pandemic, organizations across various industries have adopted widely varying permanent remote work policies for their employees. In this project, we analyzed data collected from remote employees across various industries in Australia in a 2-year study taking place during the height of the COVID-19 pandemic. 
 
 With our analysis, we aim to provide helpful insights for organizations seeking to enact remote work policies that maximize productivity and align with permanent demand for virtual and hybrid environments following the peak of the global pandemic. Our analysis is designed to help organizational stakeholders identify which factors play the largest role in worker productivity so they can make informed decisions around who should be considered for remote work and how much flexibility for remote work employees should receive. 
 
-* Preliminary Research into Work Trends of the past 3 years:
+## Preliminary Research into Work Trends of the past 3 years:
 In our initial investigation of the topic, we found an abundance of research from Human Resources and Industrial Organizational Pychology experts focusing on the benefits of remote work for employees during and after the COVID-19 pandemic. Two factors we continuously noticed in the ongoing conversation were 1) the comparison between time saved commuting and time spent working for employees adjusting to remote work arrangements and 2) how family dynamic plays a part in the schedule of a remote employee. We decided to use these questions to guide our data analysis when constructing our key research questions around productivity and policy making. 
 
-* Guiding Questions for Our Analysis:
+## Guiding Questions for Our Analysis:
 ### Productivity:
   - What factors are most tied to worker productivity in remote environments?
   - Do workers that strongly prefer remote arrangements tend to be more productive? 
@@ -38,7 +36,7 @@ Our first step in preparing the data for analysis was merging the datasets colle
 
 To begin the process, we thoroughly examined both datasets and identified the columns that were conveying the same information. Secondly, we created a column key that helped us keep track of the original question language how they related to the newly created column labels. Finally, we used the column key to identify a final list of 30 shared columns that would be useful in our analysis, which were later merged into one dataset for cleaning. We used a python notebook ot merge the desired columns from both datasets into a merged dataframe with the code below. 
 
-[Insert Screenshot]
+![Merge Table Code](https://github.com/betsysavage/RemoteWorkAnalysis/blob/main/Resources/Images/Data%20Merging%20Code.png)
 
 The shapes of our various datframes:
 - The 2020 dataframe had 1507 rows and 109 columns.
