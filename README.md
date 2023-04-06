@@ -75,7 +75,26 @@ In order to prepare the merged dataset for modeling, we took the following steps
 *   **Adding engineered features of interest for our analysis** - To make our analysis more robust, we then explored opportunities to generate calculated fields from existing columns that may provide insight into our research questions. Since we are interested in exploring how time being saved from commuting may be redistributed among remote workers (either towards working more productively or towards other areas of work-life balance), we generated a new field called “commute_time_difference” by subtracting the remote commute time from the in-person commute time. Additional calculated fields may be created as the analysis progresses.   
 
 
-* Assembling the database (Nik)
+### Assembling the Database 
+**Organizing the Data into Tables**
+* Once the data was cleaned, the dataset was then broken down into three groups. A Respondents table was created using columns of data that asked questions about the participants personal attributes such as birth year, gender, years at job and occupation description. 
+* The second table, Organizational Data, was created by using columns of survey questions that asked the participants about the organization that they worked for. These questions addressed the size of the organization that they worked for, whether the organization encouraged remote work, or if the employer would support remote work if the pandemic was over. 
+* Thirdly, a Time Management table was created using columns of survey questions that asked the respondents about how they spent their time while remote working. This included questions like what percent of time they spent remote working in 2020, and their productivity at home versus at the office.   Other columns of this table asked about time spent commuting, hours spent working, and hours of personal family time for both remote and in-person work.
+
+**Creating the Database**
+* After the data was grouped into these three tables the following Entity Relationship Diagram (ERD) was created to map out the database. Note that a responder_id column was added to each of the tables as a primary and foreign key to create relationships between the SQL tables. 
+
+* A jupyter notebook was then used to create dataframes for each of these tables, and then exported these dataframes into their own csv files. 
+* Using pgAdmin 4, PostgreSQL schemas were developed to create the database. The following SQL tables were created. 
+
+#### Respondents
+![respondents table](Resources/Images/respondents_sql_table.png)
+
+#### Organizational Data
+![orginazation table](Resources/Images/orginizational_data_sql_table.png)
+
+#### Time Management
+![time man table](Resources/Images/time_managment_sql_table.png)
 
 ### Assembling Machine Learning Model (Sean)
 
