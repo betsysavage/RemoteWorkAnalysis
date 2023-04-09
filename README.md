@@ -19,9 +19,10 @@ In our initial investigation of the topic, we found an abundance of research fro
   * Commuting: What do employees do with the time they save commuting? What factors influence how saved time is used?
   * Do employees who save time commuting use saved time working? How much?
   
-### Organizational Policy Practices: 
+### Organizational Policy Practices:  
   * What percentage of remote work yields the highest rate of productivity? 
   * What position types are most productive when remotely working?
+  
 
 ## Data:
 
