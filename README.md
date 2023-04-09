@@ -16,13 +16,12 @@ In our initial investigation of the topic, we found an abundance of research fro
   * Do more productive employees tend to be more satisfied in their jobs?
 
 ### Analysis of Time Spent:
-  * Commuting: What do employees do with the time they save commuting? How does this change by family type?
-  * How do job and industry types play a role in the daily schedule of a remote employee?
+  * Commuting: What do employees do with the time they save commuting? What factors influence how saved time is used?
+  * Do employees who save time commuting use saved time working? How much?
   
-### Organizational Policy Practices: 
-  * What percentage of employees should be given the ability to remote work? 
+### Organizational Policy Practices:  
   * What percentage of remote work yields the highest rate of productivity? 
-  * What position types are most collaborative when remotely working?
+  * What position types are most productive when remotely working?
   
 
 ## Data:
