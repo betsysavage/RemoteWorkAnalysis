@@ -76,7 +76,8 @@ In order to prepare the merged dataset for modeling, we took the following steps
 
 ### Assembling the Database 
 **Organizing the Data into Tables**
-* Once the data was cleaned, the dataset was then broken down into three groups. A Respondents table was created using columns of data that asked questions about the participants personal attributes such as birth year, gender, years at job and occupation description. 
+* Once the data was cleaned, the dataset was then broken down into three groups: respondents, organizational data, and time management. 
+* A Respondents table was created using columns of data that asked questions about the participants personal attributes such as birth year, gender, years at job and occupation description. 
 * The second table, Organizational Data, was created by using columns of survey questions that asked the participants about the organization that they worked for. These questions addressed the size of the organization that they worked for, whether the organization encouraged remote work, or if the employer would support remote work if the pandemic was over. 
 * Thirdly, a Time Management table was created using columns of survey questions that asked the respondents about how they spent their time while remote working. This included questions like what percent of time they spent remote working in 2020, and their productivity at home versus at the office.   Other columns of this table asked about time spent commuting, hours spent working, and hours of personal family time for both remote and in-person work.
 
@@ -85,8 +86,9 @@ In order to prepare the merged dataset for modeling, we took the following steps
 
 ![database erd](https://github.com/betsysavage/RemoteWorkAnalysis/blob/db2b8a09df1abd660e0c666a971a26764d3af809/database_erd/remote_work_database_erd.png)
 
-* A jupyter notebook was then used to create dataframes for each of these tables, and then exported these dataframes into their own csv files. 
-* Using pgAdmin 4, PostgreSQL schemas were developed to create the database. The following SQL tables were created. 
+* A jupyter notebook was then used to create data frames for each of these tables, and then exported these data frames into their own csv files. 
+* Using pgAdmin 4, PostgreSQL [schemas](AWS/remote_work_db_schema.sql) were developed to create the database structure. 
+* Using Amazon Web services (AWS) and rds, each csv was loaded into an S3 bucket. An engine was created to connect to AWS using a [Colab](AWS/remoteworking_rds_setup.ipynb) notebook. From there the csv files were written into postgres SQL. The following tables were created in the RemoteWorking database. 
 
 #### Respondents
 ![respondents table](Resources/Images/respondents_sql_table.png)
@@ -96,6 +98,11 @@ In order to prepare the merged dataset for modeling, we took the following steps
 
 #### Time Management
 ![time man table](Resources/Images/time_managment_sql_table.png)
+
+
+**Connecting to the Database**
+* Using another [Colab](remote_working__rds_connection.ipynb) notebook, SQL alchemy was used to connect to the AWS database. An engine was created to read in the SQL database tables. The data was read into the notebook as dictionaries, which were then converted into a pandas data frame.
+
 
 ### Assembling Machine Learning Model (Sean)
 
