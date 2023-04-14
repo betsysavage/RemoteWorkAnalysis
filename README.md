@@ -131,7 +131,9 @@ Initially we tested for 6 different types of logistical regression models to fin
     - SMOTEENN Combined Sampling
 
 From the 6 models we tested, the Random Forest model performed the best for precision and accuracy when it came to predicting employees who were more or the same levels of productive while working in remote environments (precision of .85 and accuracy of 1.0). 
-Image:
+
+
+![Class Report](https://github.com/betsysavage/RemoteWorkAnalysis/blob/main/Resources/Images/Random%20Forest%20class%20report.png)
 
 #### Feature Importance 
 Using our Random Forest model, we also generated a list of the most important features when it comes to predicting levels of worker productivity. The top 5 weighted factors are shown below:
@@ -140,7 +142,8 @@ Using our Random Forest model, we also generated a list of the most important fe
     3) Hours spent working when remote (2020) (weight of .039)
     4) Hours spent working when in person (pre-pandemic) (weight of .036)
     5) Hours spent on domestic responsibilities when remote (2020) (weight of .033)
-Image:
+
+![MLM Features](https://github.com/betsysavage/RemoteWorkAnalysis/blob/main/Resources/Images/MLM%20features%20.png)
 
 We used these heavily weighted factors to guide our exploration into what makes workers report higher levels of productivity. In our visualization, you'll find we consistently explore how worker age and time spent relate to worker productivity across various other factors. 
 
