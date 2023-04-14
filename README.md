@@ -113,8 +113,36 @@ In order to prepare the merged dataset for modeling, we took the following steps
 **Connecting to the Database**
 * Using another [Colab](remote_working__rds_connection.ipynb) notebook, SQL alchemy was used to connect to the AWS database. An engine was created to read in the SQL database tables. The data was read into the notebook as dictionaries, which were then converted into a pandas data frame.
 
+### Analysis Using Machine Learning Models
+Due to the vast number of features in our dataset, we first implemented machine learning models to help us determine which features were closest tied to worker productivity. Since our analysis revolved around categorical variables, we focused on finding the best logistical regression models to predict levels of self-reported work productivity in workers from our dataset. 
 
-### Assembling Machine Learning Model (Sean)
+While preparing our models, we decided to group responses indicating the same level of productivity while working remotely with responses indicated higher levels of productivity under the reasoning that employees who have similar output in both arrangements would be tend to support a case for remote work. 
+Image:
+
+Initially we tested for 6 different types of logistical regression models to find a best fit:
+
+- Ensemble Models
+    - Random Forest
+    - Easy Ensemble AdaBoost
+- Resampling Models:
+    - SMOTE Oversampling
+    - Naive Random Oversampling
+    - Cluster Centroids Undersampling
+    - SMOTEENN Combined Sampling
+
+From the 6 models we tested, the Random Forest model performed the best for precision and accuracy when it came to predicting employees who were more or the same levels of productive while working in remote environments (precision of .85 and accuracy of 1.0). 
+Image:
+
+#### Feature Importance 
+Using our Random Forest model, we also generated a list of the most important features when it comes to predicting levels of worker productivity. The top 5 weighted factors are shown below:
+    1) Worker Age (.056)
+    2) Hours spent on personal/family time when remote (2020) (weight of .04)
+    3) Hours spent working when remote (2020) (weight of .039)
+    4) Hours spent working when in person (pre-pandemic) (weight of .036)
+    5) Hours spent on domestic responsibilities when remote (2020) (weight of .033)
+Image:
+
+We used these heavily weighted factors to guide our exploration into what makes workers report higher levels of productivity. In our visualization, you'll find we consistently explore how worker age and time spent relate to worker productivity across various other factors. 
 
 ### Creating Visualization and Presentation (TBD)
 
