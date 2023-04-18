@@ -86,7 +86,7 @@ In order to prepare the merged dataset for modeling, we took the following steps
 **Creating the Database**
 * After the data was grouped into these three tables the following Entity Relationship Diagram (ERD) was created to map out the database. Note that a “responder_id” column was added to each of the tables as a primary and foreign key to create relationships between the SQL tables.
 
-![database erd](https://github.com/betsysavage/RemoteWorkAnalysis/blob/db2b8a09df1abd660e0c666a971a26764d3af809/database_erd/remote_work_database_erd.png)
+![database erd](https://github.com/betsysavage/RemoteWorkAnalysis/blob/dace2a6c6f8fa63089c9b085562d917060cfbf13/database_erd/remote_work_database_erd.png)
 
 
 * A jupyter notebook was then used to create data frames for each of these tables, and then exported these data frames into their own csv files. 
