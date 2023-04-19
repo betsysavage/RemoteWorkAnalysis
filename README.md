@@ -131,10 +131,10 @@ Initially we tested for 6 different types of logistical regression models to fin
 From the 6 models we tested, the Random Forest model initially performed the best for precision and accuracy when it came to predicting employees who were more productive while working in remote environments (precision of .61 and accuracy of .93), however we found that none of our models performed particulatrly well when it came to predicting employees who reported less the same level of productivity. We decided to perform Hyperparameter tuning to optimize our model. 
 
 ## Our model before performing hyperparameter tuning
-![Class Report](https://github.com/betsysavage/RemoteWorkAnalysis/blob/main/Resources/Images/Random%20Forest%20class%20report.png)
+![Class Report](https://github.com/betsysavage/RemoteWorkAnalysis/blob/main/Resources/Images/Random%20Forest%20Results%20Untuned.png)
 
 ## Our Random Forest Model after performing hyperparameter tuning:
-![Class Report](https://github.com/betsysavage/RemoteWorkAnalysis/blob/main/Resources/Images/Random%20Forest%20class%20report.png)
+![Class Report](https://github.com/betsysavage/RemoteWorkAnalysis/blob/main/Resources/Images/Random%20Forest%20Results%20Tuned.png)
 
 #### Feature Importance 
 Using our Random Forest model, we also generated a list of the most important features when it comes to predicting levels of worker productivity. The top 5 weighted factors are shown below:
