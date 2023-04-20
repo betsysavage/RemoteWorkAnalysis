@@ -195,3 +195,31 @@ We used these heavily weighted factors to guide our exploration into what makes 
 * New employees between six and twelve months reported higher productivity, more so than employees that had been with the organization over a year.  61.76 % of new employees reported being more productive. 
 * Would recommend remote learning opportunities for new employees not just remote work availability for more senior employees. 
 * For employees that did not think their organization was ready for remote work, they did not report higher productivity. Higher productivity is seen more if the employee felt like their organization was ready to provide remote work opportunities.
+
+## Recommendations
+
+### Recommendations for Employers
+
+As displayed in our dashboard visuals, remote work seems to be associated with improvements in average productivity (both in self-reported comparisons and in the amount of time spent on work) across industries and demographic groups. This analysis supports the idea that remote work strategies offer a net benefit to employers as well as employees. Furthermore, remote work trends established during Covid seem to have continued - A recent study from the New York Times suggests that nearly 40% of workers participate in some form of hybrid or remote work model. If remote work is here to stay, how can employers maximize the benefits of this model with policies that promote productivity and benefit to their employees?
+
+**1. Use the above dashboard to examine how findings change for specific industry types and available positions** Filters for industry and occupation types were added to each dashboard view in order to encourage employers to identify trends specific to their employee base in order to make informed business decisions about the best remote work policies and structure.
+**2. When designing a hybrid remote/in-person model:** 
+* Consider demographic characteristics of your organization: As shown in our age analysis, the ideal number of workdays may vary based on the employee's generation. If the company's workforce consists of large proportion of baby boomers, offering 1 day of remote work per week may yield the highest return of working hours - but if the company profile has more millenials, the ideal split may consist of 3-4 remote days per week. 
+* Identify trends in employee commutes: As employees save time on commuting, the time they save is often dedicated towards working more. A survey to collect data on the average commute time of the organization's workforce would allow an employer to offer an ideal number of remote workdays per week. 
+* Think about growth goals: Our analysis demonstrated that as organization size grew, so did the additional number of hours spent working remotely as compared to working in the office. This could be due to a variety of factors - Perhaps larger companies are offering more structure or better technology for their remote workers. As an organization scales in size, it would be wise to include conversations about remote work policy alongside other strategic goals.  
+**3. Create structures for support and collaboration when working remotely**: Our analysis found a strong correlation between the opportunities for collaboration when working remotely and the self-assessed degree of productivity when compared to working remotely. 
+**4. Trust employees to manage their time effectively when working remotely**: It is a common concern among employers that when workers operate remotely, they may become distracted and work less. When we examined our target productivity variable throughout our analysis, we saw similar trends in productivity when swapping features like worker preference for number of remote work days, the actual number of remote work days, and the number of daily hours worked. These patterns suggest that when workers express a strong preference for remote work or work their desired number of days per week from home, their number of actual working hours and productivity increase. If we draw the conclusion that employees are likely to express their preferences honestly and deliver productive working time, conducting internal surveys on remote work preferences would provide valuable information   
+
+### Recommendations for Future Research:
+
+#### Limitations of Current Dataset
+
+While this dataset allowed us to explore a broad set of factors affecting remote work, there were some limitations to the data that impacted our ability to draw more meaningful conclusions about remote work.
+
+Some drawbacks of this data included:
+1.) **Geographically specific:** Trends observed in a specific region in Australia may not be reflective of another geographic or cultural setting.
+2.) **Point-in-time specific:** While the dataset captured attitudes and trends in 2020-2021, the landscape of Covid restrictions and isolation practices have shifted significantly with availability of vaccines. As remote work opportunities respond to employee demand, we may see an adjustment in these patterns or preferences. 
+4.) **Only representative of remote workers:** Because the workers in the dataset were already accustomed to working remotely and express stronger preferences for working remotely, they may have self-selected into remote work positions. Sampling from the entire working population would have provided a clearer picture of the preferences and challenges of of the overall workforce.
+
+#### Recommended Next Steps
+In order to determine if these patterns apply to American culture in 2023, our group would identify a more recent data set with similar productivity measures. We would then replicate our modeling technique and compare trends. 
