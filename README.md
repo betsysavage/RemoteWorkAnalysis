@@ -168,6 +168,8 @@ We used these heavily weighted factors to guide our exploration into what makes 
 
 * Filtering the pie chart on different generations shows that every generation feels more productive when remote working. 
 * Millennials had the highest percentage of feeling more productive. Although a majority of boomers felt more productive as well, the percentage of them feeling more productive was smaller than every other generation.  
+* As a whole, a majority of survey respondents rated themselves as “more productive” when working remotely for all age groups, but this “more productive” proportion was the greatest among Millennial and Gen X respondents. Baby Boomers had the highest response of “same productivity” when compared to other age groups, indicating that they may be less interested in working in one type of environment over the other.
+* Overall, people who work remotely completed more working hours than those at the office. Millennials tend to put in the most working hours when they are working 4-5 days per week remotely. Baby Boomers tend to work more when working remotely 0-1 days per week remotely.
 
 ### Time Spent 
 
