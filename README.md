@@ -90,9 +90,6 @@ In order to prepare the merged dataset for modeling, we took the following steps
 
 
 * A jupyter notebook was then used to create data frames for each of these tables, and then exported these data frames into their own csv files. 
-* Using pgAdmin 4, PostgreSQL schemas were developed to create the database. The following SQL tables were created. 
-
-* A jupyter notebook was then used to create data frames for each of these tables, and then exported these data frames into their own csv files. 
 * Using pgAdmin 4, PostgreSQL [schemas](AWS/remote_work_db_schema.sql) were developed to create the database structure. 
 * Using Amazon Web services (AWS) and RDS, each csv was loaded into an S3 bucket. An engine was created to connect to AWS using a [Colab](AWS/remoteworking_rds_setup.ipynb) notebook. From there the csv files were written into postgres SQL. The following tables were created in the “RemoteWorking” database. 
 
