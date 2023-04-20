@@ -147,3 +147,51 @@ Using our Random Forest model, we also generated a list of the most important fe
 ![MLM Features](https://github.com/betsysavage/RemoteWorkAnalysis/blob/main/Resources/Images/MLM%20features%20.png)
 
 We used these heavily weighted factors to guide our exploration into what makes workers report higher levels of productivity. In our visualization, you'll find we consistently explore how worker age and time spent relate to worker productivity across various other factors.
+
+## Results 
+
+### Population Demographics
+
+![demographics](https://github.com/betsysavage/RemoteWorkAnalysis/blob/d0ada1ff3e33a1015c4d7f0dc3b69c8db6f4e162/Resources/Images/dashboard%20png/demographics.png)
+
+* There were 3019 respondents that answered the survey over the two-year period.
+* Millennials and Gen X make up most of the remote workers surveyed. Gez Z made up only a small percentage of the respondents as they are still entering the workforce. 
+* There were 1,570 males, and 1,443 female respondents. Six responded as unknown.
+* The average age for workers surveyed was between the ages of 40 and 45 years old. 
+* Overall, the younger employees were more heavily weighted towards being female, whereas the age increased males outweighed the number of females. 
+* Most respondents are partnered with dependent children. This seemed to affect how they chose to use the time gained from remote working.  
+
+
+### Age 
+
+![Age](https://github.com/betsysavage/RemoteWorkAnalysis/blob/d0ada1ff3e33a1015c4d7f0dc3b69c8db6f4e162/Resources/Images/dashboard%20png/age.png)
+
+### Time Spent 
+
+![Time spent](https://github.com/betsysavage/RemoteWorkAnalysis/blob/d0ada1ff3e33a1015c4d7f0dc3b69c8db6f4e162/Resources/Images/dashboard%20png/time_spent.png)
+
+* If someone was spending over three hours commuting to and from work, they were losing hours spent working as well as personal family time. 
+* The hours saved when working remotely allowed time to be spent in other areas of life. These people reported more time spent working and more personal family time. 
+* Organizations in turn gained hours of work from their employees.
+ 
+### Organization Size 
+
+![Organization Size](https://github.com/betsysavage/RemoteWorkAnalysis/blob/d0ada1ff3e33a1015c4d7f0dc3b69c8db6f4e162/Resources/Images/dashboard%20png/organization_size.png)
+
+### Remote Work Preference
+
+![Remote Work Preference](https://github.com/betsysavage/RemoteWorkAnalysis/blob/d0ada1ff3e33a1015c4d7f0dc3b69c8db6f4e162/Resources/Images/dashboard%20png/remote_work_preference.png)
+
+* Remote workers report that they are most productive on a hybrid 2-to-3-day work schedule or fully remote 4-to-5 days.
+* Productivity on actual number of remote days worked shows that working 4-to-5 days are much more productive or about the same as in person.
+* Productivity on preferred number of remote days they would like to work showed more of a preference to work 2-3 days compared their actual schedule. They also showed the same strong preference to work 4-5 days.
+* Between these two heat maps, it really shows that people’s preference matters. Organizations may want to listen to their employees’ preferences as they report being more productive having a schedule that they prefer.
+
+### Organization Policy Reccomendations 
+
+![org policy recs](https://github.com/betsysavage/RemoteWorkAnalysis/blob/d0ada1ff3e33a1015c4d7f0dc3b69c8db6f4e162/Resources/Images/dashboard%20png/organization_policy_recs.png)
+
+* Regardless of whether the employees have been with the organization for less than a year, less than five years, or more than five years, over 58% of employees reported more productivity being remote. 
+* New employees between six and twelve months reported higher productivity, more so than employees that had been with the organization over a year.  61.76 % of new employees reported being more productive. 
+* Would recommend remote learning opportunities for new employees not just remote work availability for more senior employees. 
+* For employees that did not think their organization was ready for remote work, they did not report higher productivity. Higher productivity is seen more if the employee felt like their organization was ready to provide remote work opportunities.
