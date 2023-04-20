@@ -55,7 +55,7 @@ Based on these initial observations in the dataset, we noted our cleaning needs 
 * Merging of the data sets 
 Our first step in preparing the data for analysis was merging the datasets collected during 2020 and 2021 into one file with similar columns. The biggest challenge associated with this task revolved around column names: while both data frames asked similar questions, edits were made to the phrasing of most questions, which resulted in most columns having different names. 
 
-To begin the process, we thoroughly examined both datasets and identified the columns that were conveying the same information. Secondly, we created a column key that helped us keep track of the original question language how they related to the newly created column labels. Finally, we used the column key to identify a final list of 30 shared columns that would be useful in our analysis, which were later merged into one dataset for cleaning. We used a python notebook to merge the desired columns from both datasets into a merged data frame with the code below. 
+To begin the process, we thoroughly examined both datasets and identified the columns that were conveying the same information. Secondly, we created a column key that helped us keep track of the original question and how they related to the newly created column labels. Finally, we used the column key to identify a final list of 30 shared columns that would be useful in our analysis, which were later merged into one dataset for cleaning. We used a python notebook to merge the desired columns from both datasets into a merged data frame with the code below. 
 
 ![Merge Table Code](https://github.com/betsysavage/RemoteWorkAnalysis/blob/main/Resources/Images/Data%20Merging%20Code.png)
 
@@ -70,7 +70,7 @@ In order to prepare the merged dataset for modeling, we took the following steps
 *   **Transforming column headers** - Because spaces, question marks, and colons can make running code more challenging, these common punctuation marks were removed or replaced with underscores. To provide a unique reference id for each survey response, a column indicating a “responder_id” was added in place of the response ids, which repeated for each of the two datasets.
 *   **Resolving null values** - We used a loop to print the number of null values for each column. Because the dataset is small, each row contains valuable information, and survey results should only be excluded from the dataset if necessary. Null values within categorical response columns were replaced with another string option - “No response” - to analyze potential patterns in skipped responses when modeling. If the null values occurred within a column with a numerical data type, the null values were replaced with the column’s median to reduce the impact of potential outliers on the model. 
 *   **Identifying and replacing outliers** - Although most of the data types in this survey were object or string responses, several questions asked the respondents to estimate the number of hours in a day they spent on a variety of activities when working remotely compared to working in the office. Because the question was open-ended, participants could list any number, leading to a risk of outliers. When examining the data with boxplot visualizations and print statements of the maximum values, it became clear that several respondents interpreted the question as the number of hours per week instead of the number of hours per day, resulting in some values that exceeded 24 hours. Since someone cannot spend 40 hours per day working, these outliers needed to be addressed to improve the accuracy of the model. We adjusted the outliers by using a loop to: 1.)  identify responses exceeding three standard deviations from the mean and 2.) replace these values with the median of the column. 
-*   **Bucketing categorical variables** - To prepare the data for a machine-learning model, all categorical variable types needed to be encoded into numeric values representing the response. If the column offers a large number of unique responses, the number of encoded variables becomes more complex. To make our model easier to analyze, we chose to “bucket” responses for categorical variables into broader categories in order to improve the efficiency of the model and reduce the impact of rare occurrences. For example, we examined the distribution of industry and occupation descriptors (which had 26 and 50 unique values, respectively) and recategorized those occurring with the lowest frequency as “other.” Additionally, many questions asked respondents to select from a menu of options the proportion of time they work remotely or would prefer to work remotely. Options included both percentages and text (ex: “20%”, “50%-About half of my time”), as well as similar values (“Rarely,” “Less than 10% of my time”), making the responses more difficult to interpret. In order to simplify these categories, we chose to reframe the options in the context of the number of days in the workweek, as outlined in the survey questions (“If you work a 5 day week, 1 day equals 20% of your work time.”). By recategorizing the response options from percentages and text to five categories representing the number of weekdays (0-1 days, 1-2 days, 2-3 days, 3-4 days, 4-5 days), we made our variables easier to analyze and interpret.   
+*   **Bucketing categorical variables** - To prepare the data for a machine-learning model, all categorical variable types needed to be encoded into numeric values representing the response. If the column offers a large number of unique responses, the number of encoded variables becomes more complex. To make our model easier to analyze, we chose to “bucket” responses for categorical variables into broader categories in order to improve the efficiency of the model and reduce the impact of rare occurrences. For example, we examined the distribution of industry and occupation descriptors (which had 26 and 50 unique values, respectively) and recategorized those occurring with the lowest frequency as “other.” Additionally, many questions asked respondents to select from a menu of options the proportion of time they work remotely or would prefer to work remotely. Options included both percentages and text (ex: “20%”, “50%-About half of my time”), as well as similar values (“Rarely,” “Less than 10% of my time”), making the responses more difficult to interpret. In order to simplify these categories, we chose to reframe the options in the context of the number of days in the workweek, as outlined in the survey questions (“If you work a 5-day week, 1 day equals 20% of your work time.”). By recategorizing the response options from percentages and text to five categories representing the number of weekdays (0-1 days, 1-2 days, 2-3 days, 3-4 days, 4-5 days), we made our variables easier to analyze and interpret.   
 *   **Adding engineered features of interest for our analysis** - To make our analysis more robust, we then explored opportunities to generate calculated fields from existing columns that may provide insight into our research questions. Since we are interested in exploring how time being saved from commuting may be redistributed among remote workers (either towards working more productively or towards other areas of work-life balance), we generated a new field called “commute_time_difference” by subtracting the remote commute time from the in-person commute time. Additional calculated fields may be created as the analysis progresses.   
 
 
@@ -128,7 +128,7 @@ Initially we tested for 6 different types of logistical regression models to fin
     - Cluster Centroids Under-sampling
     - SMOTEENN Combined Sampling
 
-From the 6 models we tested, the Random Forest model initially performed the best for precision and accuracy when it came to predicting employees who were more productive while working in remote environments (precision of .61 and accuracy of .93), however we found that none of our models performed particulatrly well when it came to predicting employees who reported less the same level of productivity. We decided to perform Hyperparameter tuning to optimize our model. 
+From the 6 models we tested, the Random Forest model initially performed the best for precision and accuracy when it came to predicting employees who were more productive while working in remote environments (precision of .61 and accuracy of .93), however we found that none of our models performed particularly well when it came to predicting employees who reported less the same level of productivity. We decided to perform Hyperparameter tuning to optimize our model. 
 
 ## Our model before performing hyperparameter tuning
 ![Class Report](https://github.com/betsysavage/RemoteWorkAnalysis/blob/main/Resources/Images/Random%20Forest%20Results%20Untuned.png)
@@ -155,7 +155,7 @@ We used these heavily weighted factors to guide our exploration into what makes 
 ![demographics](https://github.com/betsysavage/RemoteWorkAnalysis/blob/d0ada1ff3e33a1015c4d7f0dc3b69c8db6f4e162/Resources/Images/dashboard%20png/demographics.png)
 
 * There were 3019 respondents that answered the survey over the two-year period.
-* Millennials and Gen X make up most of the remote workers surveyed. Gez Z made up only a small percentage of the respondents as they are still entering the workforce. 
+* Millennials and Gen X make up most of the remote workers surveyed. Gen Z made up only a small percentage of the respondents as they are still entering the workforce. 
 * There were 1,570 males, and 1,443 female respondents. Six responded as unknown.
 * The average age for workers surveyed was between the ages of 40 and 45 years old. 
 * Overall, the younger employees were more heavily weighted towards being female, whereas the age increased males outweighed the number of females. 
@@ -165,6 +165,9 @@ We used these heavily weighted factors to guide our exploration into what makes 
 ### Age 
 
 ![Age](https://github.com/betsysavage/RemoteWorkAnalysis/blob/d0ada1ff3e33a1015c4d7f0dc3b69c8db6f4e162/Resources/Images/dashboard%20png/age.png)
+
+* Filtering the pie chart on different generations shows that every generation feels more productive when remote working. 
+* Millennials had the highest percentage of feeling more productive. Although a majority of boomers felt more productive as well, the percentage of them feeling more productive was smaller than every other generation.  
 
 ### Time Spent 
 
@@ -178,21 +181,24 @@ We used these heavily weighted factors to guide our exploration into what makes 
 
 ![Organization Size](https://github.com/betsysavage/RemoteWorkAnalysis/blob/d0ada1ff3e33a1015c4d7f0dc3b69c8db6f4e162/Resources/Images/dashboard%20png/organization_size.png)
 
+* There is an increasing amount of monthly virtual work hours being logged as company size grows (shown by line graph)
+* In the case of a company consisting of 200 employees, they were averaging an extra 154 bonus work hours per month, simply by making the move to remote work. This number goes up for companies with older employees (shown in bar chart). 
+
 ### Remote Work Preference
 
 ![Remote Work Preference](https://github.com/betsysavage/RemoteWorkAnalysis/blob/d0ada1ff3e33a1015c4d7f0dc3b69c8db6f4e162/Resources/Images/dashboard%20png/remote_work_preference.png)
 
 * Remote workers report that they are most productive on a hybrid 2-to-3-day work schedule or fully remote 4-to-5 days.
-* Productivity on actual number of remote days worked shows that working 4-to-5 days are much more productive or about the same as in person.
+* Productivity on actual number of remote days worked shows that working 4-to-5 days is much more productive or about the same as in person.
 * Productivity on preferred number of remote days they would like to work showed more of a preference to work 2-3 days compared their actual schedule. They also showed the same strong preference to work 4-5 days.
 * Between these two heat maps, it really shows that people’s preference matters. Organizations may want to listen to their employees’ preferences as they report being more productive having a schedule that they prefer.
 
-### Organization Policy Reccomendations 
+### Organization Policy Recommendations 
 
 ![org policy recs](https://github.com/betsysavage/RemoteWorkAnalysis/blob/d0ada1ff3e33a1015c4d7f0dc3b69c8db6f4e162/Resources/Images/dashboard%20png/organization_policy_recs.png)
 
 * Regardless of whether the employees have been with the organization for less than a year, less than five years, or more than five years, over 58% of employees reported more productivity being remote. 
-* New employees between six and twelve months reported higher productivity, more so than employees that had been with the organization over a year.  61.76 % of new employees reported being more productive. 
+* New employees between six and twelve months reported higher productivity, more so than employees that had been with the organization for over a year.  61.76 % of new employees reported being more productive. 
 * Would recommend remote learning opportunities for new employees not just remote work availability for more senior employees. 
 * For employees that did not think their organization was ready for remote work, they did not report higher productivity. Higher productivity is seen more if the employee felt like their organization was ready to provide remote work opportunities.
 
@@ -200,19 +206,19 @@ We used these heavily weighted factors to guide our exploration into what makes 
 
 ### Recommendations for Employers
 
-As displayed in our dashboard visuals, remote work seems to be associated with improvements in average productivity (both in self-reported comparisons and in the amount of time spent on work) across industries and demographic groups. This analysis supports the idea that remote work strategies offer a net benefit to employers as well as employees. Furthermore, remote work trends established during Covid seem to have continued - A recent study from the New York Times suggests that nearly 40% of workers participate in some form of hybrid or remote work model. If remote work is here to stay, how can employers maximize the benefits of this model with policies that promote productivity and benefit to their employees?
+As displayed in our dashboard visuals, remote work seems to be associated with improvements in average productivity (both in self-reported comparisons and in the amount of time spent on work) across industries and demographic groups. This analysis supports the idea that remote work strategies offer a net benefit to employers as well as employees. Furthermore, remote work trends established during Covid seem to have continued - A recent study from the New York Times suggests that nearly 40% of workers participate in some form of hybrid or remote work model. If remote work is here to stay, how can employers maximize the benefits of this model with policies that promote productivity and benefit their employees?
 
 **1. Use the above dashboard to examine how findings change for specific industry types and available positions** Filters for industry and occupation types were added to each dashboard view in order to encourage employers to identify trends specific to their employee base in order to make informed business decisions about the best remote work policies and structure.
 
 **2. When designing a hybrid remote/in-person model:** 
 
-* Consider demographic characteristics of your organization: As shown in our age analysis, the ideal number of workdays may vary based on the employee's generation. If the company's workforce consists of large proportion of baby boomers, offering 1 day of remote work per week may yield the highest return of working hours - but if the company profile has more millenials, the ideal split may consist of 3-4 remote days per week. 
+* Consider the demographic characteristics of your organization: As shown in our age analysis, the ideal number of workdays may vary based on the employee's generation. If the company's workforce consists of large proportion of baby boomers, offering 1 day of remote work per week may yield the highest return of working hours - but if the company profile has more millennials, the ideal split may consist of 3-4 remote days per week. 
 * Identify trends in employee commutes: As employees save time on commuting, the time they save is often dedicated towards working more. A survey to collect data on the average commute time of the organization's workforce would allow an employer to offer an ideal number of remote workdays per week. 
-* Think about growth goals: Our analysis demonstrated that as organization size grew, so did the additional number of hours spent working remotely as compared to working in the office. This could be due to a variety of factors - Perhaps larger companies are offering more structure or better technology for their remote workers. As an organization scales in size, it would be wise to include conversations about remote work policy alongside other strategic goals. 
+* Think about growth goals: Our analysis demonstrated that as the organization size grew, so did the additional number of hours spent working remotely as compared to working in the office. This could be due to a variety of factors - Perhaps larger companies are offering more structure or better technology for their remote workers. As an organization scales in size, it would be wise to include conversations about remote work policy alongside other strategic goals. 
  
 **3. Create structures for support and collaboration when working remotely**: Our analysis found a strong correlation between the opportunities for collaboration when working remotely and the self-assessed degree of productivity when compared to working remotely. 
 
-**4. Trust employees to manage their time effectively when working remotely**: It is a common concern among employers that when workers operate remotely, they may become distracted and work less. When we examined our target productivity variable throughout our analysis, we saw similar trends in productivity when swapping features like worker preference for number of remote work days, the actual number of remote work days, and the number of daily hours worked. These patterns suggest that when workers express a strong preference for remote work or work their desired number of days per week from home, their number of actual working hours and productivity increase. If we draw the conclusion that employees are likely to express their preferences honestly and deliver productive working time, conducting internal surveys on remote work preferences would provide valuable information   
+**4. Trust employees to manage their time effectively when working remotely**: It is a common concern among employers that when workers operate remotely, they may become distracted and work less. When we examined our target productivity variable throughout our analysis, we saw similar trends in productivity when swapping features like worker preference for number of remote workdays, the actual number of remote workdays, and the number of daily hours worked. These patterns suggest that when workers express a strong preference for remote work or work their desired number of days per week from home, their number of actual working hours and productivity increase. If we draw the conclusion that employees are likely to express their preferences honestly and deliver productive working time, conducting internal surveys on remote work preferences would provide valuable information.   
 
 ### Recommendations for Future Research:
 
@@ -229,4 +235,5 @@ Some drawbacks of this data included:
 3.) **Only representative of remote workers:** Because the workers in the dataset were already accustomed to working remotely and express stronger preferences for working remotely, they may have self-selected into remote work positions. Sampling from the entire working population would have provided a clearer picture of the preferences and challenges of of the overall workforce.
 
 #### Recommended Next Steps
-In order to determine if these patterns apply to American culture in 2023, our group would identify a more recent data set with similar productivity measures. We would then replicate our modeling technique and compare trends. 
+In order to determine if these patterns apply to American culture in 2023, our group would identify a more recent data set with similar productivity measures. We would then replicate our modeling technique and compare trends.
+
